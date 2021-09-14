@@ -27,48 +27,32 @@ public class Main {
 
 
 
-        node2.setLeft(node3);
-        node2.setRight(node4);
+        node2.setLeft(node4);
+        node2.setRight(node5);
         node1.setLeft(node2);
-        node5.setLeft(node6);
-        node5.setLeft(node7);
-        node1.setRight(node5);
+        node3.setRight(node7);
+        node3.setLeft(node6);
+        node1.setRight(node3);
         System.out.println("-----------Printing In order---------");
-        Main main = new Main();
+        RecursiveOrders main = new RecursiveOrders();
         main.inOrder(node1);
         System.out.println("-----------End Printing In order---------");
 
+        System.out.println("-----------Printing Pre order---------");
+        main.preOrder(node1);
+        System.out.println("-----------End Printing Pre order---------");
+
+        System.out.println("-----------Printing Post order---------");
+        main.postOrder(node1);
+        System.out.println("-----------End Printing Post order---------");
+
+
+
+
     }
 
-    public void inOrder(BinaryTreeNode root){
-        if(root!=null){
-            inOrder(root.getLeft());
-            System.out.println(root.getData());
-            inOrder(root.getRight());
-        }else{
-        //    System.out.println("Root is Null");
-        }
 
-    }
-    public void preOrder(BinaryTreeNode root){
-        if(root!=null)
-        {
-            System.out.println(root.getData());
-            preOrder(root.getLeft());
-            preOrder(root.getRight());
-        }else{
-        System.out.println("Root is Null");
-        }
-    }
-    public void postOrder(BinaryTreeNode root){
-        if(root!=null){
-            postOrder(root.getLeft());
-            postOrder(root.getRight());
-            System.out.println(root.getData());
-        }else{
-            System.out.println("Root is Null");
-        }
-    }
+
 
 
 }
